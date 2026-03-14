@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@layer base {
+  html {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Inter',
+      sans-serif;
+    color: #1b2533;
+    background-color: #f5f7fb;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+.error-toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 50;
+  max-width: 640px;
+  width: calc(100% - 32px);
+}
+
+.error-toolbar__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: #fef2f2; /* red-50 */
+  color: #b91c1c; /* red-700 */
+  font-size: 0.875rem;
+  box-shadow:
+    0 10px 15px -3px rgb(15 23 42 / 0.1),
+    0 4px 6px -4px rgb(15 23 42 / 0.1);
+  animation: error-toolbar-enter 150ms ease-out;
+}
+
+.error-toolbar__message {
+  flex: 1;
+}
+
+.error-toolbar__close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 4px;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.error-toolbar__close:hover {
+  opacity: 0.75;
+}
+
+@keyframes error-toolbar-enter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

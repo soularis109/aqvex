@@ -1,0 +1,1 @@
+export { getProductsView } from './productSelectors'
